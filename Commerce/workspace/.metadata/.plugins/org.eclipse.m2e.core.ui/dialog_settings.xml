@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="br.gov.mg.bdmg.services.fgi"/>
+			<item value="bdmg"/>
+		</list>
+		<list key="name">
+			<item value="rest-bdmg"/>
+			<item value="fgi-web"/>
+		</list>
+		<list key="artifactId">
+			<item value="fgi-api"/>
+			<item value="fgi-componente"/>
+			<item value="fgi-ws-client"/>
+			<item value="rest-bdmg"/>
+			<item value="fgi-web"/>
+			<item value="fgi-service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="1.0.0-SNAPSHOT"/>
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Guilherme\commerce\commerce"/>
+			<item value="C:\Ambiente\git_repository\email-componente"/>
+			<item value="C:\Ambiente\git_repository\nova-arquitetura-services"/>
+			<item value="C:\Ambiente\git_repository\nova-arquitetura"/>
+			<item value="C:\Ambiente\git_repository\Digital"/>
+			<item value="C:\Ambiente\git_repository"/>
+			<item value="C:\Ambiente\ws_bdmg2\"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="fgi-api"/>
+			<item value="fgi-ws-client"/>
+			<item value="fgi-web"/>
+			<item value="fgi-service"/>
+			<item value="fgi-ejb-client"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Ambiente\git_repository\fgi-componente-dev"/>
+			<item value="C:\Ambiente\ws_bdmg2\fgi-componente"/>
+			<item value="C:\Ambiente\ws_bdmg2"/>
+			<item value="C:\Ambiente\git_repository\BDMG_Digital_feature_644\backend"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="org.fgi.api"/>
+		</list>
+		<list key="groupId">
+			<item value="br.gov.mg.bdmg.services.fgi"/>
+		</list>
+		<list key="artifactId">
+			<item value="fgi-api"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="1.0.0-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;FgiBean.wsdl&apos; to &apos;wsdl&apos;" description="Move &apos;FgiBean.wsdl&apos; to &apos;wsdl&apos;" destination="src/main/resources/wsdl" element1="src/main/resources/FgiBean.wsdl" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1559581313518" updateReferences="true"/>
+</session>

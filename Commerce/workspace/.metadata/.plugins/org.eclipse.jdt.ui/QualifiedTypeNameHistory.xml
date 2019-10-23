@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.ejb.Remote"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.ejb.Stateless"/>
+<fullyQualifiedTypeName name="javax.ejb.EJB"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.gov.mg.bdmg.commons.utils.consultasql.DataSet"/>
+<fullyQualifiedTypeName name="br.gov.bdmg.fgi.exception.FgiException"/>
+<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+<fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response.Status"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Application"/>
+<fullyQualifiedTypeName name="com.ibm.icu.text.NumberFormat"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="br.gov.bdmg.fgi.ejb.client.FgiEjbService"/>
+<fullyQualifiedTypeName name="br.gov.bdmg.fgi.ejb.to.FgiIn"/>
+<fullyQualifiedTypeName name="br.gov.bdmg.fgi.ejb.to.FgiOut"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="gov.bdmg.proposta.to.ArquivoDocumentoTo"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="javax.websocket.server.PathParam"/>
+<fullyQualifiedTypeName name="com.api.commerce.repository.UsuarioRepository"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+<fullyQualifiedTypeName name="com.api.commerce.dto.UsuarioDTO"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="com.api.commerce.entities.Usuario"/>
+</qualifiedTypeNameHistroy>

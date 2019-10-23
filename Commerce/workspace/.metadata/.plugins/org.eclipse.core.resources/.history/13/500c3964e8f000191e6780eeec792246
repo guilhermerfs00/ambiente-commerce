@@ -1,0 +1,16 @@
+package com.api.commerce.services;
+
+import org.springframework.stereotype.Service;
+
+import com.api.commerce.entities.Usuario;
+
+@Service
+public interface UsuarioService {
+
+	void saveUsuario(Usuario usuario);
+
+	void deletarUsuario(Usuario usuario);
+
+	void alterarUsuario(Usuario usuario);
+
+}

@@ -1,0 +1,6 @@
+GitRepositoriesView.GitDirectories=C\:\\Ambiente\\git_repository\\nova-arquitetura-services\\.git;C\:\\Ambiente\\git_repository\\nova-arquitetura\\.git;C\:\\Ambiente\\git_repository\\Digital\\.git;D\:\\Guilherme\\commerce\\commerce\\.git;C\:\\Ambiente\\git_repository\\file-componente\\.git;C\:\\Ambiente\\git_repository\\email-componente\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Ambiente\\git_repository\\nova-arquitetura-services\\.git;C\:\\Ambiente\\git_repository\\nova-arquitetura\\.git;C\:\\Ambiente\\git_repository\\Digital\\.git;D\:\\Guilherme\\commerce\\commerce\\.git;C\:\\Ambiente\\git_repository\\file-componente\\.git;C\:\\Ambiente\\git_repository\\email-componente\\.git;
+RepositorySearchDialogSearchPath=C\:\\Ambiente\\git_repository\\nova-arquitetura
+core_autoIgnoreDerivedResources=false
+core_defaultRepositoryDir=C\:\\Ambiente\\git_repository
+eclipse.preferences.version=1
