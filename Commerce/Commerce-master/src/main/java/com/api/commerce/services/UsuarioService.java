@@ -1,5 +1,7 @@
 package com.api.commerce.services;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.api.commerce.entities.Usuario;
@@ -12,5 +14,7 @@ public interface UsuarioService {
 	void deletarUsuario(Usuario usuario);
 
 	void alterarUsuario(Usuario usuario);
+
+	Optional<Usuario> alterarUsuario(Long id);
 
 }

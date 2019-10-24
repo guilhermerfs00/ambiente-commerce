@@ -1,8 +1,11 @@
 package com.api.commerce.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,5 +43,11 @@ public class UsuarioController {
 	public ResponseEntity<Boolean> alterarUsuario(@RequestBody UsuarioDTO usuario) {
 		usuarioService.alterarUsuario(converter.map(usuario, Usuario.class));
 		return ResponseEntity.ok(true);
+	}
+
+	@PostMapping("/buscarPorId/{id}")
+	public ResponseEntity<Optional<Usuario>> alterarUsuario(@PathVariable("id") Long id) {
+			Optional<Usuario> usuario = usuarioService.alterarUsuario(id);
+			return ResponseEntity.ok(usuario);
 	}
 }

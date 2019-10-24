@@ -1,5 +1,7 @@
 package com.api.commerce.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +28,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public void alterarUsuario(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
+
+	@Override
+    public Optional<Usuario> alterarUsuario(Long id) {
+        return usuarioRepository.findById(id);
+    }
 }
