@@ -33,12 +33,6 @@ public class UsuarioController {
 		return ResponseEntity.ok(true);
 	}
 
-	@DeleteMapping("/deletar")
-	public ResponseEntity<Boolean> deletarUsuario(@RequestBody UsuarioDTO usuario) {
-		usuarioService.deletarUsuario(converter.map(usuario, Usuario.class));
-		return ResponseEntity.ok(true);
-	}
-
 	@PutMapping("/alterar")
 	public ResponseEntity<Boolean> alterarUsuario(@RequestBody UsuarioDTO usuario) {
 		usuarioService.alterarUsuario(converter.map(usuario, Usuario.class));
@@ -50,4 +44,11 @@ public class UsuarioController {
 			Optional<Usuario> usuario = usuarioService.alterarUsuario(id);
 			return ResponseEntity.ok(usuario);
 	}
+
+	@PostMapping("/deletarPorId/{id}")
+	public ResponseEntity<Boolean> deletarPorId(@PathVariable("id") Long id) {
+		usuarioService.deletarPorId(id);
+		return ResponseEntity.ok(true);
+	}
+
 }

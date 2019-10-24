@@ -20,11 +20,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void deletarUsuario(Usuario usuario) {
-		usuarioRepository.delete(usuario);
-	}
-
-	@Override
 	public void alterarUsuario(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
@@ -33,4 +28,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Optional<Usuario> alterarUsuario(Long id) {
         return usuarioRepository.findById(id);
     }
+
+	@Override
+	public void deletarPorId(Long id) {
+		usuarioRepository.deleteById(id);
+
+	}
 }

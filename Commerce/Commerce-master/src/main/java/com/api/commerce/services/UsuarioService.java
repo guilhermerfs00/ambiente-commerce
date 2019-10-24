@@ -11,10 +11,10 @@ public interface UsuarioService {
 
 	void saveUsuario(Usuario usuario);
 
-	void deletarUsuario(Usuario usuario);
-
 	void alterarUsuario(Usuario usuario);
 
 	Optional<Usuario> alterarUsuario(Long id);
+
+	void deletarPorId(Long id);
 
 }
