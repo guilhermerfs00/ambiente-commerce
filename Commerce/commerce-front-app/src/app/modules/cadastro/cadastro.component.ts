@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/resources/classes/cliente.class';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,24 +8,20 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-
-  formCliente: FormGroup;
-  constructor() { }
-
-  ngOnInit() {
-    this.createForm(new Cliente());
+  ngOnInit(){
   }
 
-  onSubmit(){
-    console.log(this.formCliente.value);
+
+  cliente = new Cliente();
+
+  salvar(form: NgForm) {
+  
+
+  form.reset({  primeiroNome: this.cliente.nome,
+                sobrenome: this.cliente.sobrenome,
+                senha:this.cliente.senha,
+                email:this.cliente.email
+                });
   }
 
-  createForm(cliente: Cliente) {
-    this.formCliente = new FormGroup({
-      nome: new FormControl(cliente.nome),
-      sobrenome: new FormControl(cliente.sobrenome),
-      email: new FormControl(cliente.email),
-      senha: new FormControl(cliente.senha)
-    })
-  }
 }
