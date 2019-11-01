@@ -29,6 +29,6 @@
             <div *ngIf="email.invalid && email.touched" class="form-control-feedback">Informe um email válido</div>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.valid">Salvar</button>
+        <button type="submit" class="btn btn-primary" (click)="salvarCliente()" [disabled]="!usuarioForm.valid">Salvar</button>
     </form>
 </div>

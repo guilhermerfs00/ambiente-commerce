@@ -7,6 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './modules/cadastro/cadastro.component';
 import { HomeComponent } from './modules/home/home.component';
+import { HttpClientModule } from '@angular/common/http'
+import { from } from 'rxjs';
+import { ClienteService } from './services/salvarCliente.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, pathMatch: 'full'},
@@ -16,7 +19,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CadastroComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     ReactiveFormsModule,
@@ -24,9 +28,10 @@ const appRoutes: Routes = [
     appRoutes,
     ),
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

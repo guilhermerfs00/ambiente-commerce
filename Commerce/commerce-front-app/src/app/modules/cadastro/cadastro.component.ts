@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/resources/classes/cliente.class';
 import { FormGroup, FormControl, NgForm } from '@angular/forms';
+import { ClienteService } from 'src/app/services/salvarCliente.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,20 +9,27 @@ import { FormGroup, FormControl, NgForm } from '@angular/forms';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  ngOnInit(){
+
+  ngOnInit() {
   }
 
+  constructor(public clienteService: ClienteService) {
+
+  }
 
   cliente = new Cliente();
 
-  salvar(form: NgForm) {
-  
+  public salvarCliente() {
+    this.clienteService.salvarCliente(this.cliente);
+  }
 
-  form.reset({  primeiroNome: this.cliente.nome,
-                sobrenome: this.cliente.sobrenome,
-                senha:this.cliente.senha,
-                email:this.cliente.email
-                });
+  salvar(form: NgForm) {
+    form.reset({
+      nome: this.cliente.nome,
+      sobrenome: this.cliente.sobrenome,
+      senha: this.cliente.senha,
+      email: this.cliente.email
+    });
   }
 
 }
