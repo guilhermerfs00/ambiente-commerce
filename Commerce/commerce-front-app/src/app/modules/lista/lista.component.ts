@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from 'src/app/services/salvarCliente.service';
+import { Cliente } from 'src/app/resources/classes/cliente.class';
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  cliente: Cliente;
+
+  constructor(public clienteService: ClienteService) {
+
+  }
 
   ngOnInit() {
+    this.buscarLista();
+  }
+
+  public buscarLista() {
+      this.clienteService.buscarLista().subscribe(lista =>{
+         console.log(lista);
+      }) 
   }
 
 }

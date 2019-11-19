@@ -15,4 +15,8 @@ export class ClienteService {
     salvarCliente(cliente: Cliente) {
         return this.http.post(this.userUrl + '/salvar', cliente);
     }
+
+    buscarLista() {
+        return this.http.get(this.userUrl + '/lista');
+    }
 }
