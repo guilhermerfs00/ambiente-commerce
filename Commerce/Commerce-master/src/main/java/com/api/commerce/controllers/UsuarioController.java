@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +18,7 @@ import com.api.commerce.entities.Usuario;
 import com.api.commerce.services.UsuarioService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/usuario")
 public class UsuarioController {
 
@@ -27,9 +29,9 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 
 	@PostMapping("/salvar")
-	public ResponseEntity<Boolean> saveProduct(@RequestBody UsuarioDTO usuario) {
+	public ResponseEntity<UsuarioDTO> saveProduct(@RequestBody UsuarioDTO usuario) {
 		usuarioService.saveUsuario(converter.map(usuario, Usuario.class));
-		return ResponseEntity.ok(true);
+		return ResponseEntity.ok(usuario);
 	}
 
 	@PutMapping("/alterar")

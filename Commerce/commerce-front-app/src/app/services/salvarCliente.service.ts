@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Cliente } from '../resources/classes/cliente.class';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = 'http://localhost:4200/api/usuario/salvar/';
 @Injectable()
 export class ClienteService {
 
@@ -10,10 +9,10 @@ export class ClienteService {
         private http: HttpClient ) {
 
     }
+    
+    private userUrl = 'http://localhost:8080/usuario';
 
     salvarCliente(cliente: Cliente) {
-        return this.http.post(API_URL, cliente).subscribe(res => {
-            console.log(res);
-        })
+        return this.http.post(this.userUrl + '/salvar', cliente);
     }
 }

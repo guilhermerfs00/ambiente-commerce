@@ -20,7 +20,9 @@ export class CadastroComponent implements OnInit {
   cliente = new Cliente();
 
   public salvarCliente() {
-    this.clienteService.salvarCliente(this.cliente);
+    this.clienteService.salvarCliente(this.cliente).subscribe(data => {
+      console.log(data.nome);
+    });
   }
 
   salvar(form: NgForm) {
