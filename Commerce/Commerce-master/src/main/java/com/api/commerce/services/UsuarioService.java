@@ -1,5 +1,6 @@
 package com.api.commerce.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -17,4 +18,5 @@ public interface UsuarioService {
 
 	void deletarPorId(Long id);
 
+	List<Usuario> listaUsuario();
 }

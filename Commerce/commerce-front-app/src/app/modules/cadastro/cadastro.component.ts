@@ -21,7 +21,7 @@ export class CadastroComponent implements OnInit {
 
   public salvarCliente() {
     this.clienteService.salvarCliente(this.cliente).subscribe(data => {
-      console.log(data.nome);
+      console.log(data);
     });
   }
 
