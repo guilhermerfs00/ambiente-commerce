@@ -1,37 +1,16 @@
 <div class="container">
-    <h2>Usuarios Cadastrados</h2>        
-    <table class="table table-striped" style="overflow-x: auto">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Sobrenome</th>
-          <th>Email</th>
-          <th>Senha</th>
-        </tr>
-      </thead>
+  <h2>Usuarios Cadastrados</h2>
+  <table class="table table-striped" style="overflow-x: auto">
       <tbody>
-        <tr>
-          <td>1</td>   
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr>
-          <td>2</td>   
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr>
-          <td>3</td>   
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>john@example.com</td>
-        </tr>
+          <tr>
+              <th *ngFor="let c of columns">{{c}}</th>
+          </tr>
+
+          <tr *ngFor="let us of users">
+              <td *ngFor="let col of columns">
+                  {{us[col]}}
+              </td>
+          </tr>
       </tbody>
-    </table>
-  </div>
+  </table>
+</div>

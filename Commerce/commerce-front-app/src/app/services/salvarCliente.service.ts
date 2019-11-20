@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from '../resources/classes/cliente.class';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from '../resources/classes/usuarios.class';
 
 @Injectable()
 export class ClienteService {
 
-    constructor(
-        private http: HttpClient ) {
+    constructor(private http: HttpClient) {
 
     }
     
@@ -15,8 +16,8 @@ export class ClienteService {
     salvarCliente(cliente: Cliente) {
         return this.http.post(this.userUrl + '/salvar', cliente);
     }
-
-    buscarLista() {
-        return this.http.get(this.userUrl + '/lista');
+    
+    public buscarLista(): Observable<User[]> {
+        return this.http.get<User[]>(this.userUrl + '/lista');
     }
 }
