@@ -1,1 +1,0 @@
-INDEX VERSION 1.4+D:\Guilherme\commerce\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
