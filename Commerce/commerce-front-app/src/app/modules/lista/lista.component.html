@@ -1,16 +1,57 @@
-<div class="container">
-  <h2>Usuarios Cadastrados</h2>
-  <table class="table table-striped" style="overflow-x: auto">
-      <tbody>
-          <tr>
-              <th *ngFor="let c of columns">{{c}}</th>
-          </tr>
+<div *ngIf="alterarUsuario">
+    <div class="alinhamento">
+        <h2>Usuarios Cadastrados</h2>
+    </div>
 
-          <tr *ngFor="let us of users">
-              <td *ngFor="let col of columns">
-                  {{us[col]}}
-              </td>
-          </tr>
-      </tbody>
-  </table>
+    <div *ngFor="let us of users">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Nome: {{us.nome}} {{us.sobrenome}}</h5>
+                    <p class="card-text">{{us.email}}</p>
+                    <button type="submit" class="btn btn-primary" (click)="alterarUsuarioBancoPorId(us)">Editar Perfil</button>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="alterarUsuario === false">
+    <div>
+        <div class="m-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group row">
+
+                            <div class="col-md-12 col-lg-6">
+                            <label class="pt-4" for="pwd">Nome:</label>
+                            <input type="text" [value]="this.dadosUsuarioUnico.nome" class="form-control" id="pwd">
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <label class="pt-4" for="pwd">Sobrenome:</label>
+                            <input type="text" [value]="this.dadosUsuarioUnico.sobrenome" class="form-control" id="pwd">
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <label class="pt-4" for="pwd">Email:</label>
+                            <input type="text" [value]="this.dadosUsuarioUnico.email" class="form-control" id="pwd">
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <label class="pt-4" for="pwd">Senha:</label>
+                            <input type="text" [value]="this.dadosUsuarioUnico.senha" class="form-control" id="pwd">
+                        </div>
+
+                    </div>
+                    <div class="alinhamento ">
+                        <button type="submit" class="btn btn-primary col-md-10 col-lg-4" (click)="salvarAlterarUsuarioBancoPorId(this.dadosUsuarioUnico)">Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
 </div>

@@ -22,13 +22,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public void alterarUsuario(Usuario usuario) {
-		usuarioRepository.save(usuario);
-	}
+		Optional<Usuario> userAux = usuarioRepository.findById(usuario.getId());
+		Usuario user = (userAux.isPresent())?userAux.get():null;
 
-	@Override
-    public Optional<Usuario> alterarUsuario(Long id) {
-        return usuarioRepository.findById(id);
-    }
+		if (user != null) {
+			usuarioRepository.save(user);
+		}
+	}
 
 	@Override
 	public void deletarPorId(Long id) {

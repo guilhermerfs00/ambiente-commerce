@@ -12,7 +12,11 @@ export class ListaComponent implements OnInit {
 
   cliente: Cliente;
 
-  public users: User[];
+  users: User[];
+
+  dadosUsuarioUnico: Cliente;
+
+  alterarUsuario: boolean;
   
   public columns: string[] = ["id", "nome", "sobrenome", "email", "senha"];
 
@@ -23,13 +27,30 @@ export class ListaComponent implements OnInit {
 
   ngOnInit() {
     this.buscarLista();
+    this.alterarUsuario = true;
   } 
 
   public buscarLista() {
     this.clienteService.buscarLista().subscribe(lista =>{
-          this.users = lista;
-          console.log(this.users);
+          this.users = lista; 
       }) 
+  }
+
+  alterarUsuarioBancoPorId(usuario: Cliente) {
+
+    this.alterarUsuario = false;
+    this.dadosUsuarioUnico = usuario;
+
+    this.clienteService.alterarCliente(this.dadosUsuarioUnico).subscribe(data => {
+      console.log(data);
+    });
+
+  }
+
+  salvarAlterarUsuarioBancoPorId(usuario: Cliente) {
+    this.clienteService.alterarCliente(this.dadosUsuarioUnico).subscribe(data => {
+      console.log(data);
+    });
   }
   
 

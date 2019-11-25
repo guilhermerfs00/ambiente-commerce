@@ -1,12 +1,10 @@
 package com.api.commerce.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -32,12 +30,14 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 
 	@PostMapping("/salvar")
+	@CrossOrigin
 	public ResponseEntity<UsuarioDTO> saveProduct(@RequestBody UsuarioDTO usuario) {
 		usuarioService.saveUsuario(converter.map(usuario, Usuario.class));
 		return ResponseEntity.ok(usuario);
 	}
 
 	@PutMapping("/alterar")
+	@CrossOrigin
 	public ResponseEntity<Boolean> alterarUsuario(@RequestBody UsuarioDTO usuario) {
 		usuarioService.alterarUsuario(converter.map(usuario, Usuario.class));
 		return ResponseEntity.ok(true);
@@ -47,12 +47,6 @@ public class UsuarioController {
 	public List<Usuario> lista() {
 			List<Usuario> usuario = usuarioService.listaUsuario();
 			return usuario;
-	}
-
-	@PostMapping("/buscarPorId/{id}")
-	public ResponseEntity<Optional<Usuario>> alterarUsuario(@PathVariable("id") Long id) {
-			Optional<Usuario> usuario = usuarioService.alterarUsuario(id);
-			return ResponseEntity.ok(usuario);
 	}
 
 	@PostMapping("/deletarPorId/{id}")
