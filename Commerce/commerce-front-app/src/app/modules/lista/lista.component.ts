@@ -41,15 +41,12 @@ export class ListaComponent implements OnInit {
     this.alterarUsuario = false;
     this.dadosUsuarioUnico = usuario;
 
-    this.clienteService.alterarCliente(this.dadosUsuarioUnico).subscribe(data => {
-      console.log(data);
-    });
-
   }
 
   salvarAlterarUsuarioBancoPorId(usuario: Cliente) {
+    console.log(usuario);
     this.clienteService.alterarCliente(this.dadosUsuarioUnico).subscribe(data => {
-      console.log(data);
+      
     });
   }
   
