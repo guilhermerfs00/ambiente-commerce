@@ -21,13 +21,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void alterarUsuario(Usuario usuario) {
-		Optional<Usuario> userAux = usuarioRepository.findById(usuario.getId());
-		Usuario user = (userAux.isPresent())?userAux.get():null;
-
-		if (user != null) {
-			usuarioRepository.save(user);
-		}
+	public void alterarUsuario(Long id, Usuario usuario) {
+		Optional<Usuario> useraux = usuarioRepository.findById(id);
+		Usuario usr = useraux.get();
+		usr.setId(usuario.getId());
+		usr.setEmail(usuario.getEmail());
+		usr.setNome(usuario.getNome());
+		usr.setSenha(usuario.getSenha());
+		usr.setSobrenome(usuario.getSobrenome());
+		usuarioRepository.save(usr);
 	}
 
 	@Override

@@ -11,7 +11,7 @@ public interface UsuarioService {
 
 	void saveUsuario(Usuario usuario);
 
-	void alterarUsuario(Usuario usuario);
+	void alterarUsuario(Long id, Usuario usuario);
 
 	void deletarPorId(Long id);
 

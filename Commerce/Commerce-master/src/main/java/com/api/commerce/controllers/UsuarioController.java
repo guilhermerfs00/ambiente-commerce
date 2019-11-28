@@ -47,9 +47,9 @@ public class UsuarioController {
 
 	}
 
-	@PostMapping("/alterar")
-	public ResponseEntity<Boolean> alterarUsuario(@RequestBody UsuarioDTO usuario) {
-		usuarioService.alterarUsuario(converter.map(usuario, Usuario.class));
+	@PutMapping("/alterar/{id}")
+	public ResponseEntity<Boolean> alterarUsuario(@PathVariable(value = "id") Long id, @RequestBody UsuarioDTO usuario) {
+		usuarioService.alterarUsuario(id, converter.map(usuario, Usuario.class));
 		return ResponseEntity.ok(true);
 	}
 
