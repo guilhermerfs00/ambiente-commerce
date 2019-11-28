@@ -17,7 +17,7 @@ export class ListaComponent implements OnInit {
   dadosUsuarioUnico: Cliente;
 
   alterarUsuario: boolean;
-  
+
   public columns: string[] = ["id", "nome", "sobrenome", "email", "senha"];
 
 
@@ -28,27 +28,26 @@ export class ListaComponent implements OnInit {
   ngOnInit() {
     this.buscarLista();
     this.alterarUsuario = true;
-  } 
+  }
 
   public buscarLista() {
-    this.clienteService.buscarLista().subscribe(lista =>{
-          this.users = lista; 
-      }) 
+    this.clienteService.buscarLista().subscribe(lista => {
+      this.users = lista;
+    })
   }
-
-  alterarUsuarioBancoPorId(usuario: Cliente) {
-
+  public troca(usuario: Cliente) {
     this.alterarUsuario = false;
     this.dadosUsuarioUnico = usuario;
-
   }
 
-  salvarAlterarUsuarioBancoPorId(usuario: Cliente) {
-    console.log(usuario);
-    this.clienteService.alterarCliente(this.dadosUsuarioUnico).subscribe(data => {
-      
+  alterarUsuarioBancoPorId() {
+
+    this.cliente = new Cliente;
+    this.cliente = this.dadosUsuarioUnico;
+
+    this.clienteService.alterarCliente(this.cliente.id, this.cliente).subscribe(data => {
+      console.log(data);
     });
-  }
-  
 
+  }
 }

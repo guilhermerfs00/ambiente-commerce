@@ -17,8 +17,8 @@ export class ClienteService {
         return this.http.post(this.userUrl + '/salvar', cliente);
     }
 
-    alterarCliente(cliente: Cliente) {
-        return this.http.post(this.userUrl + '/alterar', cliente);
+    alterarCliente(id: number,cliente: Cliente) {
+        return this.http.put(this.userUrl + `/alterar/${id}`, cliente);
     }
     
     public buscarLista(): Observable<User[]> {
