@@ -25,13 +25,13 @@ export class CadastroComponent implements OnInit {
     });
   }
 
-  salvar(form: NgForm) {
-    form.reset({
-      nome: this.cliente.nome,
-      sobrenome: this.cliente.sobrenome,
-      senha: this.cliente.senha,
-      email: this.cliente.email
-    });
-  }
+  // salvar(form: NgForm) {
+  //   form.reset({
+  //     nome: this.cliente.nome,
+  //     sobrenome: this.cliente.sobrenome,
+  //     senha: this.cliente.senha,
+  //     email: this.cliente.email
+  //   });
+  // }
 
 }

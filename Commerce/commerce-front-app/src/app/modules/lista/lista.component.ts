@@ -31,6 +31,7 @@ export class ListaComponent implements OnInit {
   }
 
   public buscarLista() {
+    this.alterarUsuario = true;
     this.clienteService.buscarLista().subscribe(lista => {
       this.users = lista;
     })
@@ -40,14 +41,21 @@ export class ListaComponent implements OnInit {
     this.dadosUsuarioUnico = usuario;
   }
 
-  alterarUsuarioBancoPorId() {
+  deletarUsuario(id: number) {
+    this.clienteService.deletarCliente(id).subscribe(data => {
+      this.buscarLista();
+      console.log(data);
+    });
+  }
 
+  alterarUsuarioBancoPorId() {
     this.cliente = new Cliente;
     this.cliente = this.dadosUsuarioUnico;
 
     this.clienteService.alterarCliente(this.cliente.id, this.cliente).subscribe(data => {
+      this.buscarLista();
       console.log(data);
     });
-
+    
   }
 }

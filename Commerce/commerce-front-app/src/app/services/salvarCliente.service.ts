@@ -20,6 +20,10 @@ export class ClienteService {
     alterarCliente(id: number,cliente: Cliente) {
         return this.http.put(this.userUrl + `/alterar/${id}`, cliente);
     }
+
+    deletarCliente(id: number){
+        return this.http.delete(this.userUrl + `/deletar/${id}`);
+    }
     
     public buscarLista(): Observable<User[]> {
         return this.http.get<User[]>(this.userUrl + '/lista');
