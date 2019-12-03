@@ -1,0 +1,34 @@
+<div class="container col-xs-12 col-sm-10 col-md-6 col-lg-4">
+    <div *ngIf="usuarioForm.invalid && usuarioForm.dirty" class="alert alert-danger">
+        Preencha todos os campos corretamente.
+    </div>
+
+    <form autocomplete="off" #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
+        <div class="form-group" [class.has-danger]="titlulo.invalid && nome.touched">
+            <label class="form-control-label">Titulo da oferta</label>
+            <input type="text" class="form-control" name="titulo" [(ngModel)]="oferta.titulo" required #titulo="ngModel">
+
+            <div *ngIf="nome.hasError('required') && nome.touched" class="form-control-feedback">Informe um nome</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="sobrenome.invalid && sobrenome.touched">
+            <label class="form-control-label">Sobrenome</label>
+            <input type="text" class="form-control" name="sobrenome" [(ngModel)]="cliente.sobrenome" required  #sobrenome="ngModel">
+            <div *ngIf="sobrenome.invalid && sobrenome.touched" class="form-control-feedback">Informe um sobrenome válido</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="senha.invalid && senha.touched">
+            <label class="form-control-label">Senha</label>
+            <input type="text" class="form-control" name="senha" [(ngModel)]="cliente.senha" required  #senha="ngModel">
+            <div *ngIf="senha.invalid && senha.touched" class="form-control-feedback">Informe uma senha válida</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="email.invalid && email.touched">
+            <label class="form-control-label">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="cliente.email" required  #email="ngModel">
+            <div *ngIf="email.invalid && email.touched" class="form-control-feedback">Informe um email válido</div>
+        </div>
+
+        <button type="submit" routerLink="/lista" class="btn btn-primary" (click)="salvarCliente()" [disabled]="!usuarioForm.valid">Salvar</button>
+    </form>
+</div>

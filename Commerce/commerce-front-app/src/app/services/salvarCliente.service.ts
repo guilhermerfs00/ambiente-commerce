@@ -25,7 +25,12 @@ export class ClienteService {
         return this.http.delete(this.userUrl + `/deletar/${id}`);
     }
     
-    public buscarLista(): Observable<User[]> {
-        return this.http.get<User[]>(this.userUrl + '/lista');
-    }
+     public buscarLista(): Observable<User[]> {
+     return this.http.get<User[]>(this.userUrl + '/lista');
+     }
+
+    // public buscarLista(): Observable<any> {
+    //     console.log(this.http.get<User[]>(this.userUrl + '/pageLoader'));
+    //     return this.http.get<User[]>(this.userUrl + '/pageLoader')
+    // }
 }

@@ -11,11 +11,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { from } from 'rxjs';
 import { ClienteService } from './services/salvarCliente.service';
 import { ListaComponent } from './modules/lista/lista.component';
+import { CadastroItemComponent } from './modules/cadastro-item/cadastro-item.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, pathMatch: 'full'},
   { path: 'cadastro', component: CadastroComponent },
   { path: 'lista', component: ListaComponent },
+  { path: 'cadastro-item', component: CadastroItemComponent },
 ];
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ const appRoutes: Routes = [
     CadastroComponent,
     HomeComponent,
     ListaComponent,
+    CadastroItemComponent,
     
   ],
   imports: [

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -31,21 +32,31 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
+	@RequestMapping(value = "/pageLoader", method = RequestMethod.GET)
+	public ReturnDTO ListPageLoader() {
+
+		List<Usuario> usuario = usuarioService.listaUsuario();
+
+		return new ReturnDTO.Builder()
+				//.setCode()
+				.setContent(usuario)
+				.build();
+	}
+
 	@PostMapping("/salvar")
 	public ReturnDTO saveProduct(@RequestBody UsuarioDTO usuario) {
 		try {
 			usuarioService.saveUsuario(converter.map(usuario, Usuario.class));
 			return new ReturnDTO.Builder()
-					.setCode(1L)
+					//.setCode(1L)
 					.setContent(usuario)
 					.build();
 		} catch (Exception e) {
 			return new ReturnDTO.Builder()
 					.setManssager(e.getMessage())
-					.setCode(1L)
+					//.setCode(1L)
 					.build();
 		}
-
 	}
 
 	@PutMapping("/alterar/{id}")
