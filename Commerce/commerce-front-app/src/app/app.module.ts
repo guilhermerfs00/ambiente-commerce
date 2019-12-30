@@ -12,12 +12,15 @@ import { from } from 'rxjs';
 import { ClienteService } from './services/salvarCliente.service';
 import { ListaComponent } from './modules/lista/lista.component';
 import { CadastroItemComponent } from './modules/cadastro-item/cadastro-item.component';
+import { LoginComponent } from './modules/login/login.component';
+import { ValidarLoginService } from './services/validarLogin.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, pathMatch: 'full'},
   { path: 'cadastro', component: CadastroComponent },
   { path: 'lista', component: ListaComponent },
   { path: 'cadastro-item', component: CadastroItemComponent },
+  { path: 'login', component: LoginComponent }
 ];
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ const appRoutes: Routes = [
     HomeComponent,
     ListaComponent,
     CadastroItemComponent,
+    LoginComponent,
     
   ],
   imports: [
@@ -37,7 +41,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [ClienteService],
+  providers: [ClienteService, , ValidarLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
