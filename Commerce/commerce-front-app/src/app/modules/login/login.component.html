@@ -1,0 +1,26 @@
+<div class="container col-xs-12 col-sm-10 col-md-6 col-lg-4 pt-4">
+    <div *ngIf="usuarioForm.invalid && usuarioForm.dirty" class="alert alert-danger">
+        Preencha todos os campos corretamente.
+    </div>
+
+    <form autocomplete="off" #usuarioForm="ngForm">
+        <div class="form-group" [class.has-danger]="nome.invalid && nome.touched">
+            <label class="form-control-label">Usuario</label>
+            <input type="text" class="form-control" name="usuario" [(ngModel)]="login.nome" required #nome="ngModel">
+
+            <div *ngIf="nome.hasError('required') && nome.touched" class="form-control-feedback">Informe o usuário</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="senha.invalid && senha.touched">
+            <label class="form-control-label">Senha</label>
+            <input type="text" class="form-control" name="senha" [(ngModel)]="login.senha" required  #senha="ngModel">
+            <div *ngIf="senha.invalid && senha.touched" class="form-control-feedback">Informe uma senha válida</div>
+        </div>
+
+       
+    </form>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary col-8 d-flex justify-content-center" (click)="verificarLogin()" [disabled]="!usuarioForm.valid">Entrar</button>
+    </div>
+    
+</div>
