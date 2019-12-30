@@ -1,5 +1,4 @@
-
- export class LoginClass {
+export class LoginClass {
     nome: string = '';
     senha: string = '';
   }

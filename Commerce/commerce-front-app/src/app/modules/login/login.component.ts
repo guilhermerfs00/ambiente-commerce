@@ -11,8 +11,6 @@ import { ValidarLoginService } from 'src/app/services/validarLogin.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginValidator:boolean;
-  
   ngOnInit() {
   }
 
