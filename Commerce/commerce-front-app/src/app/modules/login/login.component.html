@@ -13,14 +13,12 @@
 
         <div class="form-group" [class.has-danger]="senha.invalid && senha.touched">
             <label class="form-control-label">Senha</label>
-            <input type="text" class="form-control" name="senha" [(ngModel)]="login.senha" required  #senha="ngModel">
+            <input type="text" class="form-control" name="senha" [(ngModel)]="login.senha" required #senha="ngModel">
             <div *ngIf="senha.invalid && senha.touched" class="form-control-feedback">Informe uma senha válida</div>
         </div>
-
-       
     </form>
-    <div class="d-flex justify-content-center">
+    <div *ngIf="!erroLogin" class="d-flex justify-content-center">
         <button type="submit" class="btn btn-primary col-8 d-flex justify-content-center" (click)="verificarLogin()" [disabled]="!usuarioForm.valid">Entrar</button>
     </div>
-    
+
 </div>

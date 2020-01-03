@@ -11,18 +11,30 @@ import { ValidarLoginService } from 'src/app/services/validarLogin.service';
 })
 export class LoginComponent implements OnInit {
 
+  erroLogin: boolean;
+  contErroLogin: number;
+
   ngOnInit() {
+    this.erroLogin = false;
+    this.contErroLogin = 0;
   }
 
   constructor(public validarLoginService: ValidarLoginService) {
-
   }
 
   login = new LoginClass();
 
   public verificarLogin() {
+    
+    this.contErroLogin++;
+
+    if(this.contErroLogin > 3) {
+      this.erroLogin = true;
+    }
     this.validarLoginService.login(this.login).subscribe(data => {
-      console.log(data);
+      if (data === true) {
+        localStorage.setItem('logado', "true");
+      }
     });
   }
 
