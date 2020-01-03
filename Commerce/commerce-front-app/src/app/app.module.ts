@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     ),
     FormsModule,
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [ClienteService, , ValidarLoginService],
   bootstrap: [AppComponent]

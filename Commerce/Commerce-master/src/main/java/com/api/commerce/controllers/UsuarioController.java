@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.commerce.cofig.Converter;
+import com.api.commerce.dto.LoginDTO;
 import com.api.commerce.dto.UsuarioDTO;
 import com.api.commerce.entities.Usuario;
 import com.api.commerce.returnDTO.ReturnDTO;
+import com.api.commerce.services.LoginService;
 import com.api.commerce.services.UsuarioService;
 
 @RestController
@@ -31,6 +32,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private LoginService loginService;
 
 	@RequestMapping(value = "/pageLoader", method = RequestMethod.GET)
 	public ReturnDTO ListPageLoader() {
@@ -75,6 +79,22 @@ public class UsuarioController {
 	public ResponseEntity<Boolean> deletarPorId(@PathVariable("id") Long id) {
 		usuarioService.deletarPorId(id);
 		return ResponseEntity.ok(true);
+	}
+	
+	@PostMapping("/verificar-login")
+	public ReturnDTO verificarLogin(@RequestBody LoginDTO login) {
+		try {
+			loginService.validarService(login);
+			return new ReturnDTO.Builder()
+					.setCode(1L)
+					.setContent(login)
+					.build();
+		} catch (Exception e) {
+			return new ReturnDTO.Builder()
+					.setManssager(e.getMessage())
+					.setCode(1L)
+					.build();
+		}
 	}
 
 }
